@@ -254,7 +254,16 @@ registerDataRoutes(app, { query, getUserFromAuthHeader })
 registerAdminRoutes(app, { query, getUserFromAuthHeader })
 registerVetRoutes(app, { query, getUserFromAuthHeader })
 
+
+
+app.use(express.static(path.join(__dirname, "../dist")))
+
+app.get("*", (_req, res) => {
+  res.sendFile(path.join(__dirname, "../dist/index.html"))
+})
+
 app.listen(PORT, () => {
+
   console.log(
     `API ready at http://localhost:${PORT} → MySQL ${dbConfig.user}@${dbConfig.host}:${dbConfig.port}/${dbConfig.database}`,
   )
