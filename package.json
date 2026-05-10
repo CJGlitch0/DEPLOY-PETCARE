@@ -10,7 +10,8 @@
     "db:ensure-approved-at": "node backend/scripts/ensure-approved-at.mjs",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "node backend/server.mjs"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
