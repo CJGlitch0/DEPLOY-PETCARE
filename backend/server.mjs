@@ -15,14 +15,15 @@ const PORT = Number(process.env.PORT) || 3001
 const SESSION_DAYS = Number(process.env.SESSION_DAYS) || 30
 
 const dbConfig = {
-  host: process.env.DB_HOST || "127.0.0.1",
+  host: process.env.DB_HOST || "mysql.railway.internal",
   port: process.env.DB_PORT ? Number(process.env.DB_PORT) : 3306,
   user: process.env.DB_USER || "root",
-  password: process.env.DB_PASSWORD ?? "",
-  database: process.env.DB_NAME || "petcare_db",
+  password: process.env.DB_PASSWORD ?? "gDFrhGvOEjLTNldyQDRfcXbNmoqHaFSa",
+  database: process.env.DB_NAME || "railway",
   waitForConnections: true,
   connectionLimit: 10,
 }
+
 
 const pool = mysql.createPool(dbConfig)
 
