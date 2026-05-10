@@ -256,11 +256,15 @@ registerVetRoutes(app, { query, getUserFromAuthHeader })
 
 
 
+
+app.use("/uploads", express.static(path.join(__dirname, "../uploads")))
+
 app.use(express.static(path.join(__dirname, "../dist")))
 
-app.get("*", (_req, res) => {
+app.use((_req, res) => {
   res.sendFile(path.join(__dirname, "../dist/index.html"))
 })
+
 
 app.listen(PORT, () => {
 
